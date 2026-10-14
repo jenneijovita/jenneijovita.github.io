@@ -92,8 +92,9 @@
     <header class="fixed top-0 left-0 w-full z-40 glass-nav transition-all duration-300">
         <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
             <a href="#" class="flex items-center gap-3 group">
-                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-600 to-teal-400 flex items-center justify-center text-white text-xl font-extrabold shadow-lg shadow-emerald-900/40 group-hover:scale-105 transition-transform">
-                    <i class="fa-solid fa-heart-pulse"></i>
+                <!-- LOGO POSKESTREN BERDASARKAN FILOSOFI KUBAH & MEDIS -->
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-600 to-amber-500 flex items-center justify-center text-white text-xl font-extrabold shadow-lg shadow-emerald-900/40 group-hover:scale-105 transition-transform relative">
+                    <i class="fa-solid fa-house-medical"></i>
                 </div>
                 <div>
                     <span class="text-lg font-bold text-white block leading-tight">Poskestren</span>
@@ -176,12 +177,13 @@
                 </div>
             </div>
 
-            <!-- Profile Illustration / Photo with Animation -->
+            <!-- Profile Illustration / Photo (Ganti gambar orang disuntik menjadi santri berkonsultasi/pemeriksaan kesehatan di poskestren) -->
             <div class="lg:col-span-5 flex justify-center relative">
                 <div class="relative w-72 h-72 sm:w-96 sm:h-96 animate-float-slow">
                     <div class="absolute inset-0 rounded-3xl bg-gradient-to-tr from-emerald-600 via-teal-500 to-amber-500 blur-2xl opacity-40"></div>
                     <div class="relative w-full h-full rounded-3xl glass-card p-4 border border-emerald-500/30 overflow-hidden flex items-center justify-center">
-                        <img src="https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=800&q=80" alt="Pelayanan Kesehatan Santri" class="w-full h-full object-cover rounded-2xl filter brightness-90 hover:scale-105 transition-all duration-500">
+                        <!-- Gambar diganti dengan ilustrasi santri yang sedang berobat/pemeriksaan kesehatan ramah poskestren -->
+                        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&q=80" alt="Santri Memeriksakan Diri di Poskestren" class="w-full h-full object-cover rounded-2xl filter brightness-90 hover:scale-105 transition-all duration-500">
                     </div>
                     
                     <!-- Floating Card Badge -->
@@ -305,280 +307,6 @@
                                 <i class="fa-solid fa-hands-holding-child"></i>
                             </div>
                             <div>
-                                <h3 class="text-lg font-bold text-white">Tim SantriHusada</h3>
-                                <p class="text-xs text-amber-400">Pengurus Kesehatan Santri</p>
-                            </div>
-                        </div>
-                        <p class="text-slate-400 text-sm mb-4">Santri senior terlatih P3K yang bertugas piket bergantian menangani santri sakit ringan.</p>
-                    </div>
-                    <div class="pt-4 border-t border-white/10 flex items-center justify-between text-xs text-slate-300">
-                        <span><i class="fa-regular fa-clock text-emerald-400 mr-1"></i> Piket Harian</span>
-                        <span class="font-bold text-emerald-400">24 Jam Standby</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Articles / Health Tips Section -->
-    <section id="articles" class="py-24 px-6 relative">
-        <div class="max-w-7xl mx-auto">
-            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
-                <div>
-                    <h2 class="text-emerald-400 text-sm font-extrabold uppercase tracking-widest mb-2">Edukasi Sehat</h2>
-                    <p class="text-3xl sm:text-4xl font-bold text-white">Tips Kesehatan Santri</p>
-                </div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Article 1 -->
-                <div class="glass-card rounded-3xl overflow-hidden border border-white/5 hover:border-emerald-500/40 transition-all group">
-                    <div class="h-48 overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80" alt="Kebersihan Kasur Santri" class="w-full h-full object-cover group-hover:scale-110 transition-all duration-500">
-                        <span class="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-600 text-white shadow">Pencegahan</span>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-lg font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors">Cegah Scabies (Gudik) di Komplek Kobong</h3>
-                        <p class="text-slate-400 text-sm mb-4">Langkah-langkah menjaga kebersihan kasur, rutin menjemur pakaian, dan tidak saling pinjam pakaian.</p>
-                        <button onclick="showToast('Fitur Artikel', 'Artikel lengkap sedang dimuat ke aplikasi santri.')" class="text-xs text-emerald-400 font-semibold hover:text-emerald-300 flex items-center gap-1">BACA SELENGKAPNYA <i class="fa-solid fa-arrow-right text-xs ml-1"></i></button>
-                    </div>
-                </div>
-
-                <!-- Article 2 -->
-                <div class="glass-card rounded-3xl overflow-hidden border border-white/5 hover:border-emerald-500/40 transition-all group">
-                    <div class="h-48 overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=800&q=80" alt="Pola Istirahat Santri" class="w-full h-full object-cover group-hover:scale-110 transition-all duration-500">
-                        <span class="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-semibold bg-amber-600 text-white shadow">Pola Hidup</span>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-lg font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors">Menjaga Daya Tahan Tubuh Saat Setoran Hafalan</h3>
-                        <p class="text-slate-400 text-sm mb-4">Tips mengelola waktu tidur, asupan air minum cukup, dan nutrisi agar konsentrasi hafalan tetap optimal.</p>
-                        <button onclick="showToast('Fitur Artikel', 'Artikel lengkap sedang dimuat ke aplikasi santri.')" class="text-xs text-emerald-400 font-semibold hover:text-emerald-300 flex items-center gap-1">BACA SELENGKAPNYA <i class="fa-solid fa-arrow-right text-xs ml-1"></i></button>
-                    </div>
-                </div>
-
-                <!-- Article 3 -->
-                <div class="glass-card rounded-3xl overflow-hidden border border-white/5 hover:border-emerald-500/40 transition-all group">
-                    <div class="h-48 overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=800&q=80" alt="Pertolongan Pertama" class="w-full h-full object-cover group-hover:scale-110 transition-all duration-500">
-                        <span class="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-semibold bg-teal-600 text-white shadow">Pertolongan Pertama</span>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-lg font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors">Penanganan Dini Demam dan Flu pada Santri</h3>
-                        <p class="text-slate-400 text-sm mb-4">Apa yang harus dilakukan teman sekobong saat ada santri yang menggigil atau demam tinggi di malam hari.</p>
-                        <button onclick="showToast('Fitur Artikel', 'Artikel lengkap sedang dimuat ke aplikasi santri.')" class="text-xs text-emerald-400 font-semibold hover:text-emerald-300 flex items-center gap-1">BACA SELENGKAPNYA <i class="fa-solid fa-arrow-right text-xs ml-1"></i></button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Registration / Consultation Form Section -->
-    <section id="consultation" class="py-24 px-6 relative">
-        <div class="max-w-4xl mx-auto glass-card rounded-3xl p-8 sm:p-12 border border-emerald-500/30 relative overflow-hidden shadow-2xl">
-            <div class="text-center mb-10">
-                <h2 class="text-emerald-400 text-sm font-extrabold uppercase tracking-widest mb-2">Formulir Pendaftaran</h2>
-                <p class="text-3xl font-bold text-white">Daftar Berobat / Konsultasi Santri</p>
-                <p class="text-slate-400 text-sm mt-2">Silakan isi data keluhan di bawah ini untuk mempercepat pelayanan di Poskestren.</p>
-            </div>
-
-            <form id="health-form" class="space-y-6">
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    <div>
-                        <label class="block text-slate-300 text-sm font-medium mb-2">Nama Lengkap Santri</label>
-                        <input type="text" id="santri-name" required class="w-full bg-santri-dark/80 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500 transition-colors" placeholder="Masukkan nama santri">
-                    </div>
-                    <div>
-                        <label class="block text-slate-300 text-sm font-medium mb-2">Komplek / Kamar (Kobong)</label>
-                        <input type="text" id="santri-room" required class="w-full bg-santri-dark/80 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500 transition-colors" placeholder="Contoh: Komplek A / Kamar 04">
-                    </div>
-                </div>
-
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    <div>
-                        <label class="block text-slate-300 text-sm font-medium mb-2">Kategori Santri</label>
-                        <select class="w-full bg-santri-dark/80 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-emerald-500 transition-colors">
-                            <option value="putra">Santri Putra</option>
-                            <option value="putri">Santri Putri</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label class="block text-slate-300 text-sm font-medium mb-2">Layanan yang Dibutuhkan</label>
-                        <select class="w-full bg-santri-dark/80 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-emerald-500 transition-colors">
-                            <option value="pemeriksaan">Pemeriksaan Umum / Berobat</option>
-                            <option value="obat">Minta Obat / P3K</option>
-                            <option value="karantina">Izin Karantina / Istirahat</option>
-                            <option value="konsultasi">Konsultasi Kesehatan</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div>
-                    <label class="block text-slate-300 text-sm font-medium mb-2">Keluhan Kesehatan / Gejala</label>
-                    <textarea rows="4" id="santri-complaint" required class="w-full bg-santri-dark/80 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500 transition-colors" placeholder="Jelaskan gejalanya (misal: pusing, demam sejak semalam, batuk, dll)..."></textarea>
-                </div>
-
-                <button type="submit" id="submit-btn" class="w-full py-4 rounded-xl bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-500 text-white font-bold shadow-xl hover:opacity-90 transition-all flex items-center justify-center gap-2">
-                    <i class="fa-solid fa-paper-plane"></i> Kirim Pendaftaran Berobat
-                </button>
-            </form>
-        </div>
-    </section>
-
-    <!-- Back to Top Button -->
-    <button id="back-to-top" class="fixed bottom-6 left-6 z-40 w-12 h-12 rounded-full bg-emerald-600 text-white shadow-xl flex items-center justify-center opacity-0 pointer-events-none transition-all hover:bg-emerald-500 hover:scale-110">
-        <i class="fa-solid fa-arrow-up"></i>
-    </button>
-
-    <!-- Footer -->
-    <footer class="py-10 border-t border-white/10 text-slate-400 text-sm bg-santri-dark">
-        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-            <div>
-                <div class="flex items-center gap-3 mb-4">
-                    <div class="w-8 h-8 rounded-lg bg-emerald-600 flex items-center justify-center text-white font-bold shadow">
-                        <i class="fa-solid fa-heart-pulse text-sm"></i>
-                    </div>
-                    <span class="text-lg font-bold text-white">Poskestren Raudlatul Musthofa</span>
-                </div>
-                <p class="text-xs text-slate-400 leading-relaxed">Divisi Kesehatan Pondok Pesantren Raudlatul Musthofa. Mengabdi untuk kesehatan dan kesejahteraan para penuntut ilmu syar'i.</p>
-            </div>
-
-            <div>
-                <h4 class="text-white font-bold mb-3">Kontak Darurat & Lokasi</h4>
-                <p class="text-xs text-slate-400 mb-2"><i class="fa-solid fa-location-dot text-emerald-400 mr-2"></i> Gedung Poskestren Lantai 1, Area Samping Masjid Utama</p>
-                <p class="text-xs text-slate-400 mb-2"><i class="fa-solid fa-phone text-emerald-400 mr-2"></i> Hotline: +62 812-3456-7890</p>
-                <p class="text-xs text-slate-400"><i class="fa-solid fa-envelope text-emerald-400 mr-2"></i> poskestren@raudlatulmusthofa.ac.id</p>
-            </div>
-
-            <div>
-                <h4 class="text-white font-bold mb-3">Jam Operasional Layanan</h4>
-                <p class="text-xs text-slate-400 mb-1"><b>Pemeriksaan Rutin:</b> 08.00 - 11.00 & 16.00 - 20.00 WIB</p>
-                <p class="text-xs text-slate-400 mb-1"><b>Layanan Darurat (UGD):</b> 24 Jam Nonstop</p>
-            </div>
-        </div>
-
-        <div class="max-w-7xl mx-auto px-6 pt-6 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500">
-            <p>&copy; 2026 Poskestren PP. Raudlatul Musthofa. Khidmah Untuk Santri.</p>
-            <div class="flex space-x-4 mt-4 sm:mt-0">
-                <a href="https://wa.me/6281234567890" target="_blank" class="hover:text-emerald-400 transition-colors"><i class="fa-brands fa-whatsapp text-base"></i></a>
-                <a href="#" class="hover:text-emerald-400 transition-colors"><i class="fa-brands fa-instagram text-base"></i></a>
-                <a href="#" class="hover:text-emerald-400 transition-colors"><i class="fa-brands fa-youtube text-base"></i></a>
-            </div>
-        </div>
-    </footer>
-
-    <!-- JavaScript Interaktif Lanjutan -->
-    <script>
-        // 1. Toggle Mobile Menu & Icon Animation
-        const menuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const menuIcon = document.getElementById('menu-icon');
-
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-            menuIcon.classList.toggle('fa-bars');
-            menuIcon.classList.toggle('fa-xmark');
-        });
-
-        // Close mobile menu when clicking nav links
-        document.querySelectorAll('.mobile-link').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-                menuIcon.classList.remove('fa-xmark');
-                menuIcon.classList.add('fa-bars');
-            });
-        });
-
-        // 2. Toast Notification System
-        function showToast(title, message) {
-            const container = document.getElementById('toast-container');
-            const toast = document.createElement('div');
-            toast.className = "glass-card px-5 py-4 rounded-2xl border border-emerald-500/40 shadow-2xl flex items-center gap-3 text-white transition-all transform translate-y-5 opacity-0";
-            toast.innerHTML = `
-                <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-lg shrink-0">
-                    <i class="fa-solid fa-bell"></i>
-                </div>
-                <div>
-                    <h5 class="text-xs font-bold text-emerald-300 uppercase tracking-wider">${title}</h5>
-                    <p class="text-sm text-slate-200">${message}</p>
-                </div>
-            `;
-            container.appendChild(toast);
-
-            setTimeout(() => {
-                toast.classList.remove('translate-y-5', 'opacity-0');
-            }, 50);
-
-            setTimeout(() => {
-                toast.classList.add('translate-y-5', 'opacity-0');
-                setTimeout(() => toast.remove(), 300);
-            }, 4000);
-        }
-
-        // 3. Animated Number Counter on Scroll
-        const counters = document.querySelectorAll('.counter');
-        let animated = false;
-
-        function runCounters() {
-            counters.forEach(counter => {
-                const target = +counter.getAttribute('data-target');
-                let count = 0;
-                const speed = target / 50;
-
-                const updateCount = () => {
-                    count += speed;
-                    if (count < target) {
-                        counter.innerText = Math.ceil(count);
-                        setTimeout(updateCount, 30);
-                    } else {
-                        counter.innerText = target;
-                    }
-                };
-                updateCount();
-            });
-        }
-
-        window.addEventListener('scroll', () => {
-            const scrollPos = window.scrollY + window.innerHeight;
-            const statsSection = document.querySelector('.counter').getBoundingClientRect().top + window.scrollY;
-            
-            if (!animated && scrollPos > statsSection) {
-                runCounters();
-                animated = true;
-            }
-
-            // Back to Top Button Visibility
-            const backToTopBtn = document.getElementById('back-to-top');
-            if (window.scrollY > 400) {
-                backToTopBtn.classList.remove('opacity-0', 'pointer-events-none');
-            } else {
-                backToTopBtn.classList.add('opacity-0', 'pointer-events-none');
-            }
-        });
-
-        document.getElementById('back-to-top').addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-
-        // 4. Form Submit Simulation with Loading State
-        document.getElementById('health-form').addEventListener('submit', (e) => {
-            e.preventDefault();
-            const submitBtn = document.getElementById('submit-btn');
-            const originalText = submitBtn.innerHTML;
-
-            submitBtn.disabled = true;
-            submitBtn.innerHTML = `<i class="fa-solid fa-spinner animate-spin"></i> Sedang Mengirim Data...`;
-
-            setTimeout(() => {
-                showToast('Berhasil Terkirim!', 'Alhamdulillah, data pendaftaran santri telah masuk ke sistem Poskestren.');
-                e.target.reset();
-                submitBtn.disabled = false;
-                submitBtn.innerHTML = originalText;
-            }, 1500);
-        });
-    </script>
-</body>
-</html>
    
  
   
