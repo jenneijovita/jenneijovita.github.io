@@ -22,12 +22,21 @@
                     },
                     colors: {
                         santri: {
-                            dark: '#062017',
-                            card: '#0B2E22',
+                            dark: '#04150E',
+                            card: '#082218',
                             primary: '#0D9488',
                             emerald: '#059669',
                             gold: '#D97706',
                             light: '#ECFDF5'
+                        }
+                    },
+                    animation: {
+                        'float-slow': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' },
                         }
                     }
                 }
@@ -39,7 +48,7 @@
             width: 8px;
         }
         ::-webkit-scrollbar-track {
-            background: #062017;
+            background: #04150E;
         }
         ::-webkit-scrollbar-thumb {
             background: #115E59;
@@ -49,12 +58,12 @@
             background: #0D9488;
         }
         .glass-card {
-            background: rgba(11, 46, 34, 0.75);
-            backdrop-filter: blur(12px);
+            background: rgba(8, 34, 24, 0.75);
+            backdrop-filter: blur(14px);
             border: 1px solid rgba(255, 255, 255, 0.08);
         }
         .glass-nav {
-            background: rgba(6, 32, 23, 0.85);
+            background: rgba(4, 21, 14, 0.85);
             backdrop-filter: blur(16px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
@@ -70,17 +79,20 @@
         }
     </style>
 </head>
-<body class="bg-santri-dark text-slate-200 font-sans antialiased relative overflow-x-hidden">
+<body class="bg-santri-dark text-slate-200 font-sans antialiased relative overflow-x-hidden selection:bg-emerald-500 selection:text-white">
 
     <!-- Ambient Glowing Backgrounds -->
-    <div class="fixed top-0 left-1/4 w-96 h-96 bg-emerald-600/15 rounded-full blur-3xl pointer-events-none -z-10 animate-pulse"></div>
-    <div class="fixed bottom-1/3 right-10 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl pointer-events-none -z-10"></div>
+    <div class="fixed top-0 left-1/4 w-[500px] h-[500px] bg-emerald-600/10 rounded-full blur-[120px] pointer-events-none -z-10 animate-pulse"></div>
+    <div class="fixed bottom-1/3 right-10 w-[400px] h-[400px] bg-teal-500/10 rounded-full blur-[100px] pointer-events-none -z-10"></div>
+
+    <!-- Notification Toast Container -->
+    <div id="toast-container" class="fixed bottom-6 right-6 z-50 flex flex-col gap-3 pointer-events-none"></div>
 
     <!-- Navigation Bar -->
-    <header class="fixed top-0 left-0 w-full z-50 glass-nav transition-all duration-300">
+    <header class="fixed top-0 left-0 w-full z-40 glass-nav transition-all duration-300">
         <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-            <a href="#" class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-600 to-teal-400 flex items-center justify-center text-white text-xl font-extrabold shadow-lg shadow-emerald-900/40">
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-600 to-teal-400 flex items-center justify-center text-white text-xl font-extrabold shadow-lg shadow-emerald-900/40 group-hover:scale-105 transition-transform">
                     <i class="fa-solid fa-heart-pulse"></i>
                 </div>
                 <div>
@@ -101,33 +113,33 @@
             </nav>
 
             <!-- Mobile Menu Toggle Button -->
-            <button id="mobile-menu-btn" class="lg:hidden text-slate-300 hover:text-white text-2xl">
-                <i class="fa-solid fa-bars"></i>
+            <button id="mobile-menu-btn" class="lg:hidden text-slate-300 hover:text-white text-2xl focus:outline-none">
+                <i class="fa-solid fa-bars" id="menu-icon"></i>
             </button>
         </div>
 
         <!-- Mobile Navigation Menu -->
-        <div id="mobile-menu" class="hidden lg:hidden glass-card border-t border-white/10 px-6 py-6 space-y-4">
-            <a href="#about" class="block text-slate-300 hover:text-emerald-400 font-medium py-1">Profil</a>
-            <a href="#services" class="block text-slate-300 hover:text-emerald-400 font-medium py-1">Layanan Kesehatan</a>
-            <a href="#schedule" class="block text-slate-300 hover:text-emerald-400 font-medium py-1">Jadwal Dokters & Piket</a>
-            <a href="#articles" class="block text-slate-300 hover:text-emerald-400 font-medium py-1">Edukasi & PHBS</a>
-            <a href="#consultation" class="block w-full text-center px-5 py-3 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-500 text-white font-semibold shadow-lg">Daftar Berobat / Konsultasi</a>
+        <div id="mobile-menu" class="hidden lg:hidden glass-card border-t border-white/10 px-6 py-6 space-y-4 transition-all">
+            <a href="#about" class="block text-slate-300 hover:text-emerald-400 font-medium py-1 mobile-link">Profil</a>
+            <a href="#services" class="block text-slate-300 hover:text-emerald-400 font-medium py-1 mobile-link">Layanan Kesehatan</a>
+            <a href="#schedule" class="block text-slate-300 hover:text-emerald-400 font-medium py-1 mobile-link">Jadwal Dokter & Piket</a>
+            <a href="#articles" class="block text-slate-300 hover:text-emerald-400 font-medium py-1 mobile-link">Edukasi & PHBS</a>
+            <a href="#consultation" class="block w-full text-center px-5 py-3 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-500 text-white font-semibold shadow-lg mobile-link">Daftar Berobat / Konsultasi</a>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="min-h-screen pt-32 pb-20 flex items-center justify-center relative px-6">
+    <section id="about" class="min-h-screen pt-32 pb-20 flex items-center justify-center relative px-6">
         <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
             <div class="lg:col-span-7 space-y-8 text-center lg:text-left">
-                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card border border-emerald-500/30 text-emerald-300 text-xs sm:text-sm font-medium">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card border border-emerald-500/30 text-emerald-300 text-xs sm:text-sm font-medium animate-bounce">
                     <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
                     Pos Kesehatan Pesantren (Poskestren) Siap 24/7
                 </div>
 
                 <div class="space-y-3">
-                    <p class="font-arabic text-2xl text-amber-400">الشِّفَاءُ وَالصِّحَّةُ فِي خِدْمَةِ الطَّلَبَةِ</p>
+                    <p class="font-arabic text-2xl text-amber-400 tracking-wide">الشِّفَاءُ وَالصِّحَّةُ فِي خِدْمَةِ الطَّلَبَةِ</p>
                     <h1 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight">
                         Menjaga Kesehatan Santri, <br>
                         <span class="text-emerald-gradient">Menjaga Generasi Rabbani</span>
@@ -147,26 +159,26 @@
                     </a>
                 </div>
 
-                <!-- Stats Badges -->
+                <!-- Animated Stats Counter -->
                 <div class="pt-8 border-t border-white/10 grid grid-cols-3 gap-4 text-center lg:text-left">
                     <div>
-                        <h4 class="text-2xl sm:text-3xl font-extrabold text-white">1,200+</h4>
+                        <h4 class="text-2xl sm:text-4xl font-extrabold text-white"><span class="counter" data-target="1200">0</span>+</h4>
                         <p class="text-slate-400 text-xs sm:text-sm">Santri Terlayani</p>
                     </div>
                     <div>
-                        <h4 class="text-2xl sm:text-3xl font-extrabold text-white">24 Jam</h4>
+                        <h4 class="text-2xl sm:text-4xl font-extrabold text-white">24 <span class="text-emerald-400 text-sm">Jam</span></h4>
                         <p class="text-slate-400 text-xs sm:text-sm">Piket SantriHusada</p>
                     </div>
                     <div>
-                        <h4 class="text-2xl sm:text-3xl font-extrabold text-white">100%</h4>
+                        <h4 class="text-2xl sm:text-4xl font-extrabold text-white"><span class="counter" data-target="100">0</span>%</h4>
                         <p class="text-slate-400 text-xs sm:text-sm">Obat Standar Medis</p>
                     </div>
                 </div>
             </div>
 
-            <!-- Profile Illustration / Photo -->
+            <!-- Profile Illustration / Photo with Animation -->
             <div class="lg:col-span-5 flex justify-center relative">
-                <div class="relative w-72 h-72 sm:w-96 sm:h-96">
+                <div class="relative w-72 h-72 sm:w-96 sm:h-96 animate-float-slow">
                     <div class="absolute inset-0 rounded-3xl bg-gradient-to-tr from-emerald-600 via-teal-500 to-amber-500 blur-2xl opacity-40"></div>
                     <div class="relative w-full h-full rounded-3xl glass-card p-4 border border-emerald-500/30 overflow-hidden flex items-center justify-center">
                         <img src="https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=800&q=80" alt="Pelayanan Kesehatan Santri" class="w-full h-full object-cover rounded-2xl filter brightness-90 hover:scale-105 transition-all duration-500">
@@ -198,8 +210,8 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <!-- Service 1 -->
-                <div class="glass-card p-8 rounded-3xl hover:-translate-y-2 transition-all duration-300 border border-white/5 hover:border-emerald-500/50 group">
-                    <div class="w-14 h-14 rounded-2xl bg-emerald-500/20 text-emerald-400 group-hover:bg-emerald-500 group-hover:text-white flex items-center justify-center text-2xl transition-all mb-6">
+                <div class="glass-card p-8 rounded-3xl hover:-translate-y-2 transition-all duration-300 border border-white/5 hover:border-emerald-500/50 group cursor-pointer">
+                    <div class="w-14 h-14 rounded-2xl bg-emerald-500/20 text-emerald-400 group-hover:bg-emerald-500 group-hover:text-white flex items-center justify-center text-2xl transition-all mb-6 shadow-md">
                         <i class="fa-solid fa-stethoscope"></i>
                     </div>
                     <h3 class="text-xl font-bold text-white mb-3">Pemeriksaan Rutin</h3>
@@ -207,8 +219,8 @@
                 </div>
 
                 <!-- Service 2 -->
-                <div class="glass-card p-8 rounded-3xl hover:-translate-y-2 transition-all duration-300 border border-white/5 hover:border-emerald-500/50 group">
-                    <div class="w-14 h-14 rounded-2xl bg-emerald-500/20 text-emerald-400 group-hover:bg-emerald-500 group-hover:text-white flex items-center justify-center text-2xl transition-all mb-6">
+                <div class="glass-card p-8 rounded-3xl hover:-translate-y-2 transition-all duration-300 border border-white/5 hover:border-emerald-500/50 group cursor-pointer">
+                    <div class="w-14 h-14 rounded-2xl bg-emerald-500/20 text-emerald-400 group-hover:bg-emerald-500 group-hover:text-white flex items-center justify-center text-2xl transition-all mb-6 shadow-md">
                         <i class="fa-solid fa-bed-pulse"></i>
                     </div>
                     <h3 class="text-xl font-bold text-white mb-3">Ruang Karantina</h3>
@@ -216,8 +228,8 @@
                 </div>
 
                 <!-- Service 3 -->
-                <div class="glass-card p-8 rounded-3xl hover:-translate-y-2 transition-all duration-300 border border-white/5 hover:border-emerald-500/50 group">
-                    <div class="w-14 h-14 rounded-2xl bg-emerald-500/20 text-emerald-400 group-hover:bg-emerald-500 group-hover:text-white flex items-center justify-center text-2xl transition-all mb-6">
+                <div class="glass-card p-8 rounded-3xl hover:-translate-y-2 transition-all duration-300 border border-white/5 hover:border-emerald-500/50 group cursor-pointer">
+                    <div class="w-14 h-14 rounded-2xl bg-emerald-500/20 text-emerald-400 group-hover:bg-emerald-500 group-hover:text-white flex items-center justify-center text-2xl transition-all mb-6 shadow-md">
                         <i class="fa-solid fa-soap"></i>
                     </div>
                     <h3 class="text-xl font-bold text-white mb-3">Edukasi PHBS</h3>
@@ -225,8 +237,8 @@
                 </div>
 
                 <!-- Service 4 -->
-                <div class="glass-card p-8 rounded-3xl hover:-translate-y-2 transition-all duration-300 border border-white/5 hover:border-emerald-500/50 group">
-                    <div class="w-14 h-14 rounded-2xl bg-emerald-500/20 text-emerald-400 group-hover:bg-emerald-500 group-hover:text-white flex items-center justify-center text-2xl transition-all mb-6">
+                <div class="glass-card p-8 rounded-3xl hover:-translate-y-2 transition-all duration-300 border border-white/5 hover:border-emerald-500/50 group cursor-pointer">
+                    <div class="w-14 h-14 rounded-2xl bg-emerald-500/20 text-emerald-400 group-hover:bg-emerald-500 group-hover:text-white flex items-center justify-center text-2xl transition-all mb-6 shadow-md">
                         <i class="fa-solid fa-truck-medical"></i>
                     </div>
                     <h3 class="text-xl font-bold text-white mb-3">Rujukan & Ambulans</h3>
@@ -246,10 +258,10 @@
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Doctor Card 1 -->
-                <div class="glass-card rounded-3xl p-6 border border-emerald-500/20 flex flex-col justify-between">
+                <div class="glass-card rounded-3xl p-6 border border-emerald-500/20 flex flex-col justify-between hover:border-emerald-400/50 transition-all">
                     <div>
                         <div class="flex items-center gap-4 mb-4">
-                            <div class="w-14 h-14 rounded-full bg-emerald-600/30 border border-emerald-400 flex items-center justify-center text-2xl text-emerald-300">
+                            <div class="w-14 h-14 rounded-full bg-emerald-600/30 border border-emerald-400 flex items-center justify-center text-2xl text-emerald-300 shadow-lg">
                                 <i class="fa-solid fa-user-doctor"></i>
                             </div>
                             <div>
@@ -266,10 +278,10 @@
                 </div>
 
                 <!-- Doctor Card 2 -->
-                <div class="glass-card rounded-3xl p-6 border border-emerald-500/20 flex flex-col justify-between">
+                <div class="glass-card rounded-3xl p-6 border border-emerald-500/20 flex flex-col justify-between hover:border-emerald-400/50 transition-all">
                     <div>
                         <div class="flex items-center gap-4 mb-4">
-                            <div class="w-14 h-14 rounded-full bg-emerald-600/30 border border-emerald-400 flex items-center justify-center text-2xl text-emerald-300">
+                            <div class="w-14 h-14 rounded-full bg-emerald-600/30 border border-emerald-400 flex items-center justify-center text-2xl text-emerald-300 shadow-lg">
                                 <i class="fa-solid fa-user-nurse"></i>
                             </div>
                             <div>
@@ -286,10 +298,10 @@
                 </div>
 
                 <!-- SantriHusada Duty -->
-                <div class="glass-card rounded-3xl p-6 border border-emerald-500/20 flex flex-col justify-between">
+                <div class="glass-card rounded-3xl p-6 border border-emerald-500/20 flex flex-col justify-between hover:border-amber-400/50 transition-all">
                     <div>
                         <div class="flex items-center gap-4 mb-4">
-                            <div class="w-14 h-14 rounded-full bg-amber-500/20 border border-amber-400 flex items-center justify-center text-2xl text-amber-400">
+                            <div class="w-14 h-14 rounded-full bg-amber-500/20 border border-amber-400 flex items-center justify-center text-2xl text-amber-400 shadow-lg">
                                 <i class="fa-solid fa-hands-holding-child"></i>
                             </div>
                             <div>
@@ -323,12 +335,12 @@
                 <div class="glass-card rounded-3xl overflow-hidden border border-white/5 hover:border-emerald-500/40 transition-all group">
                     <div class="h-48 overflow-hidden relative">
                         <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80" alt="Kebersihan Kasur Santri" class="w-full h-full object-cover group-hover:scale-110 transition-all duration-500">
-                        <span class="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-600 text-white">Pencegahan</span>
+                        <span class="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-600 text-white shadow">Pencegahan</span>
                     </div>
                     <div class="p-6">
                         <h3 class="text-lg font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors">Cegah Scabies (Gudik) di Komplek Kobong</h3>
                         <p class="text-slate-400 text-sm mb-4">Langkah-langkah menjaga kebersihan kasur, rutin menjemur pakaian, dan tidak saling pinjam pakaian.</p>
-                        <span class="text-xs text-emerald-400 font-semibold">BACA SELENGKAPNYA <i class="fa-solid fa-arrow-right text-xs ml-1"></i></span>
+                        <button onclick="showToast('Fitur Artikel', 'Artikel lengkap sedang dimuat ke aplikasi santri.')" class="text-xs text-emerald-400 font-semibold hover:text-emerald-300 flex items-center gap-1">BACA SELENGKAPNYA <i class="fa-solid fa-arrow-right text-xs ml-1"></i></button>
                     </div>
                 </div>
 
@@ -336,12 +348,12 @@
                 <div class="glass-card rounded-3xl overflow-hidden border border-white/5 hover:border-emerald-500/40 transition-all group">
                     <div class="h-48 overflow-hidden relative">
                         <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=800&q=80" alt="Pola Istirahat Santri" class="w-full h-full object-cover group-hover:scale-110 transition-all duration-500">
-                        <span class="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-semibold bg-amber-600 text-white">Pola Hidup</span>
+                        <span class="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-semibold bg-amber-600 text-white shadow">Pola Hidup</span>
                     </div>
                     <div class="p-6">
                         <h3 class="text-lg font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors">Menjaga Daya Tahan Tubuh Saat Setoran Hafalan</h3>
                         <p class="text-slate-400 text-sm mb-4">Tips mengelola waktu tidur, asupan air minum cukup, dan nutrisi agar konsentrasi hafalan tetap optimal.</p>
-                        <span class="text-xs text-emerald-400 font-semibold">BACA SELENGKAPNYA <i class="fa-solid fa-arrow-right text-xs ml-1"></i></span>
+                        <button onclick="showToast('Fitur Artikel', 'Artikel lengkap sedang dimuat ke aplikasi santri.')" class="text-xs text-emerald-400 font-semibold hover:text-emerald-300 flex items-center gap-1">BACA SELENGKAPNYA <i class="fa-solid fa-arrow-right text-xs ml-1"></i></button>
                     </div>
                 </div>
 
@@ -349,12 +361,12 @@
                 <div class="glass-card rounded-3xl overflow-hidden border border-white/5 hover:border-emerald-500/40 transition-all group">
                     <div class="h-48 overflow-hidden relative">
                         <img src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=800&q=80" alt="Pertolongan Pertama" class="w-full h-full object-cover group-hover:scale-110 transition-all duration-500">
-                        <span class="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-semibold bg-teal-600 text-white">Pertolongan Pertama</span>
+                        <span class="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-semibold bg-teal-600 text-white shadow">Pertolongan Pertama</span>
                     </div>
                     <div class="p-6">
                         <h3 class="text-lg font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors">Penanganan Dini Demam dan Flu pada Santri</h3>
                         <p class="text-slate-400 text-sm mb-4">Apa yang harus dilakukan teman sekobong saat ada santri yang menggigil atau demam tinggi di malam hari.</p>
-                        <span class="text-xs text-emerald-400 font-semibold">BACA SELENGKAPNYA <i class="fa-solid fa-arrow-right text-xs ml-1"></i></span>
+                        <button onclick="showToast('Fitur Artikel', 'Artikel lengkap sedang dimuat ke aplikasi santri.')" class="text-xs text-emerald-400 font-semibold hover:text-emerald-300 flex items-center gap-1">BACA SELENGKAPNYA <i class="fa-solid fa-arrow-right text-xs ml-1"></i></button>
                     </div>
                 </div>
             </div>
@@ -363,7 +375,7 @@
 
     <!-- Registration / Consultation Form Section -->
     <section id="consultation" class="py-24 px-6 relative">
-        <div class="max-w-4xl mx-auto glass-card rounded-3xl p-8 sm:p-12 border border-emerald-500/30 relative overflow-hidden">
+        <div class="max-w-4xl mx-auto glass-card rounded-3xl p-8 sm:p-12 border border-emerald-500/30 relative overflow-hidden shadow-2xl">
             <div class="text-center mb-10">
                 <h2 class="text-emerald-400 text-sm font-extrabold uppercase tracking-widest mb-2">Formulir Pendaftaran</h2>
                 <p class="text-3xl font-bold text-white">Daftar Berobat / Konsultasi Santri</p>
@@ -374,11 +386,11 @@
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <div>
                         <label class="block text-slate-300 text-sm font-medium mb-2">Nama Lengkap Santri</label>
-                        <input type="text" required class="w-full bg-santri-dark/80 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500 transition-colors" placeholder="Masukkan nama santri">
+                        <input type="text" id="santri-name" required class="w-full bg-santri-dark/80 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500 transition-colors" placeholder="Masukkan nama santri">
                     </div>
                     <div>
                         <label class="block text-slate-300 text-sm font-medium mb-2">Komplek / Kamar (Kobong)</label>
-                        <input type="text" required class="w-full bg-santri-dark/80 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500 transition-colors" placeholder="Contoh: Komplek A / Kamar 04">
+                        <input type="text" id="santri-room" required class="w-full bg-santri-dark/80 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500 transition-colors" placeholder="Contoh: Komplek A / Kamar 04">
                     </div>
                 </div>
 
@@ -403,22 +415,27 @@
 
                 <div>
                     <label class="block text-slate-300 text-sm font-medium mb-2">Keluhan Kesehatan / Gejala</label>
-                    <textarea rows="4" required class="w-full bg-santri-dark/80 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500 transition-colors" placeholder="Jelaskan gejalanya (misal: pusing, demam sejak semalam, batuk, dll)..."></textarea>
+                    <textarea rows="4" id="santri-complaint" required class="w-full bg-santri-dark/80 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500 transition-colors" placeholder="Jelaskan gejalanya (misal: pusing, demam sejak semalam, batuk, dll)..."></textarea>
                 </div>
 
-                <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-500 text-white font-bold shadow-xl hover:opacity-90 transition-opacity flex items-center justify-center gap-2">
+                <button type="submit" id="submit-btn" class="w-full py-4 rounded-xl bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-500 text-white font-bold shadow-xl hover:opacity-90 transition-all flex items-center justify-center gap-2">
                     <i class="fa-solid fa-paper-plane"></i> Kirim Pendaftaran Berobat
                 </button>
             </form>
         </div>
     </section>
 
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-6 left-6 z-40 w-12 h-12 rounded-full bg-emerald-600 text-white shadow-xl flex items-center justify-center opacity-0 pointer-events-none transition-all hover:bg-emerald-500 hover:scale-110">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
     <!-- Footer -->
     <footer class="py-10 border-t border-white/10 text-slate-400 text-sm bg-santri-dark">
         <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
             <div>
                 <div class="flex items-center gap-3 mb-4">
-                    <div class="w-8 h-8 rounded-lg bg-emerald-600 flex items-center justify-center text-white font-bold">
+                    <div class="w-8 h-8 rounded-lg bg-emerald-600 flex items-center justify-center text-white font-bold shadow">
                         <i class="fa-solid fa-heart-pulse text-sm"></i>
                     </div>
                     <span class="text-lg font-bold text-white">Poskestren Raudlatul Musthofa</span>
@@ -443,28 +460,121 @@
         <div class="max-w-7xl mx-auto px-6 pt-6 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500">
             <p>&copy; 2026 Poskestren PP. Raudlatul Musthofa. Khidmah Untuk Santri.</p>
             <div class="flex space-x-4 mt-4 sm:mt-0">
-                <a href="#" class="hover:text-emerald-400 transition-colors"><i class="fa-brands fa-whatsapp text-base"></i></a>
+                <a href="https://wa.me/6281234567890" target="_blank" class="hover:text-emerald-400 transition-colors"><i class="fa-brands fa-whatsapp text-base"></i></a>
                 <a href="#" class="hover:text-emerald-400 transition-colors"><i class="fa-brands fa-instagram text-base"></i></a>
                 <a href="#" class="hover:text-emerald-400 transition-colors"><i class="fa-brands fa-youtube text-base"></i></a>
             </div>
         </div>
     </footer>
 
-    <!-- JavaScript Interaktif -->
+    <!-- JavaScript Interaktif Lanjutan -->
     <script>
-        // Toggle Menu Mobile
+        // 1. Toggle Mobile Menu & Icon Animation
         const menuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
 
         menuBtn.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
+            menuIcon.classList.toggle('fa-bars');
+            menuIcon.classList.toggle('fa-xmark');
         });
 
-        // Form Submit Simulation
+        // Close mobile menu when clicking nav links
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.classList.remove('fa-xmark');
+                menuIcon.classList.add('fa-bars');
+            });
+        });
+
+        // 2. Toast Notification System
+        function showToast(title, message) {
+            const container = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+            toast.className = "glass-card px-5 py-4 rounded-2xl border border-emerald-500/40 shadow-2xl flex items-center gap-3 text-white transition-all transform translate-y-5 opacity-0";
+            toast.innerHTML = `
+                <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-lg shrink-0">
+                    <i class="fa-solid fa-bell"></i>
+                </div>
+                <div>
+                    <h5 class="text-xs font-bold text-emerald-300 uppercase tracking-wider">${title}</h5>
+                    <p class="text-sm text-slate-200">${message}</p>
+                </div>
+            `;
+            container.appendChild(toast);
+
+            setTimeout(() => {
+                toast.classList.remove('translate-y-5', 'opacity-0');
+            }, 50);
+
+            setTimeout(() => {
+                toast.classList.add('translate-y-5', 'opacity-0');
+                setTimeout(() => toast.remove(), 300);
+            }, 4000);
+        }
+
+        // 3. Animated Number Counter on Scroll
+        const counters = document.querySelectorAll('.counter');
+        let animated = false;
+
+        function runCounters() {
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-target');
+                let count = 0;
+                const speed = target / 50;
+
+                const updateCount = () => {
+                    count += speed;
+                    if (count < target) {
+                        counter.innerText = Math.ceil(count);
+                        setTimeout(updateCount, 30);
+                    } else {
+                        counter.innerText = target;
+                    }
+                };
+                updateCount();
+            });
+        }
+
+        window.addEventListener('scroll', () => {
+            const scrollPos = window.scrollY + window.innerHeight;
+            const statsSection = document.querySelector('.counter').getBoundingClientRect().top + window.scrollY;
+            
+            if (!animated && scrollPos > statsSection) {
+                runCounters();
+                animated = true;
+            }
+
+            // Back to Top Button Visibility
+            const backToTopBtn = document.getElementById('back-to-top');
+            if (window.scrollY > 400) {
+                backToTopBtn.classList.remove('opacity-0', 'pointer-events-none');
+            } else {
+                backToTopBtn.classList.add('opacity-0', 'pointer-events-none');
+            }
+        });
+
+        document.getElementById('back-to-top').addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // 4. Form Submit Simulation with Loading State
         document.getElementById('health-form').addEventListener('submit', (e) => {
             e.preventDefault();
-            alert('Alhamdulillah! Pendaftaran berobat berhasil dikirim. Silakan langsung menuju ke Poskestren atau tunggu petugas SantriHusada datang ke kobong.');
-            e.target.reset();
+            const submitBtn = document.getElementById('submit-btn');
+            const originalText = submitBtn.innerHTML;
+
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = `<i class="fa-solid fa-spinner animate-spin"></i> Sedang Mengirim Data...`;
+
+            setTimeout(() => {
+                showToast('Berhasil Terkirim!', 'Alhamdulillah, data pendaftaran santri telah masuk ke sistem Poskestren.');
+                e.target.reset();
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalText;
+            }, 1500);
         });
     </script>
 </body>
