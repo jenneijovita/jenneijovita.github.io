@@ -91,15 +91,10 @@
     <!-- Navigation Bar -->
     <header class="fixed top-0 left-0 w-full z-40 glass-nav transition-all duration-300">
         <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-          <a href="#" class="flex items-center gap-3 group">
-    <!-- LOGO POSKESTREN (SVG BULAN SABIT & PALANG MEDIS) -->
-    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-700 via-teal-600 to-amber-500 flex items-center justify-center p-2 shadow-lg shadow-emerald-900/40 group-hover:scale-105 transition-transform">
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full text-amber-300 drop-shadow">
-            <!-- Bulan Sabit -->
-            <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C10 19.5 9 16 9 12C9 8 10 4.5 12 2Z" fill="currentColor"/>
-            <!-- Simbol Tambah / Medis (+ berwarna putih) -->
-            <path d="M16 8H14V11H11V13H14V16H16V13H19V11H16V8Z" fill="#FFFFFF"/>
-        </svg>
+         <a href="#" class="flex items-center gap-3 group">
+    <!-- LOGO POSKESTREN: RUMAH + SIMBOL MEDIS -->
+    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-600 to-amber-500 flex items-center justify-center text-white text-xl font-extrabold shadow-lg shadow-emerald-900/40 group-hover:scale-105 transition-transform">
+        <i class="fa-solid fa-house-medical"></i>
     </div>
     <div>
         <span class="text-lg font-bold text-white block leading-tight">Poskestren</span>
@@ -197,7 +192,7 @@
                         </div>
                         <div>
                             <p class="text-xs text-slate-400">Tim Pembina</p>
-                            <p class="text-sm font-bold text-white">Dokter & Usada Pesantren</p>
+                            <p class="text-sm font-bold text-white">Perawat & Usada Pesantren</p>
                         </div>
                     </div>
                 </div>
@@ -259,7 +254,7 @@
         <div class="max-w-7xl mx-auto">
             <div class="text-center max-w-2xl mx-auto mb-16">
                 <h2 class="text-emerald-400 text-sm font-extrabold uppercase tracking-widest mb-2">Jadwal Tugas</h2>
-                <p class="text-3xl sm:text-4xl font-bold text-white">Dokter Pembina & Piket SantriHusada</p>
+                <p class="text-3xl sm:text-4xl font-bold text-white">Perawat Pembina & Piket SantriHusada</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -271,8 +266,8 @@
                                 <i class="fa-solid fa-user-doctor"></i>
                             </div>
                             <div>
-                                <h3 class="text-lg font-bold text-white">dr. H. Ahmad Zaki, M.Kes</h3>
-                                <p class="text-xs text-emerald-400">Dokter Penanggung Jawab</p>
+                                <h3 class="text-lg font-bold text-white"> Yeni Vidia Irawati, M.Kes</h3>
+                                <p class="text-xs text-emerald-400">Perawat Penanggung Jawab</p>
                             </div>
                         </div>
                         <p class="text-slate-400 text-sm mb-4">Visit rutin, konsultasi kesehatan umum, dan evaluasi sanitasi lingkungan pondok.</p>
@@ -291,7 +286,7 @@
                                 <i class="fa-solid fa-user-nurse"></i>
                             </div>
                             <div>
-                                <h3 class="text-lg font-bold text-white">Ns. Siti Aisyah, S.Kep</h3>
+                                <h3 class="text-lg font-bold text-white">Jeni Jovita Ramadhani</h3>
                                 <p class="text-xs text-emerald-400">Perawat Mitra Poskestren</p>
                             </div>
                         </div>
@@ -396,7 +391,7 @@
                     </div>
                     <div>
                         <label class="block text-slate-300 text-sm font-medium mb-2">Komplek / Asrama</label>
-                        <input type="text" id="santri-room" required class="w-full bg-santri-dark/80 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500 transition-colors" placeholder="Contoh: Komplek A / Kamar 04">
+                        <input type="text" id="santri-room" required class="w-full bg-santri-dark/80 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500 transition-colors" placeholder="Contoh: Komplek / Asrama ">
                     </div>
                 </div>
 
