@@ -201,53 +201,83 @@
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services" class="py-24 px-6 relative">
+   <!-- Articles / Health Tips Section -->
+    <section id="articles" class="py-24 px-6 relative">
         <div class="max-w-7xl mx-auto">
-            <div class="text-center max-w-2xl mx-auto mb-16">
-                <h2 class="text-emerald-400 text-sm font-extrabold uppercase tracking-widest mb-2">Layanan Kami</h2>
-                <p class="text-3xl sm:text-4xl font-bold text-white">Program & Fasilitas Kesehatan</p>
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+                <div>
+                    <h2 class="text-emerald-400 text-sm font-extrabold uppercase tracking-widest mb-2">Edukasi Sehat</h2>
+                    <p class="text-3xl sm:text-4xl font-bold text-white">Tips Kesehatan Santri</p>
+                </div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Service 1 -->
-                <div class="glass-card p-8 rounded-3xl hover:-translate-y-2 transition-all duration-300 border border-white/5 hover:border-emerald-500/50 group cursor-pointer">
-                    <div class="w-14 h-14 rounded-2xl bg-emerald-500/20 text-emerald-400 group-hover:bg-emerald-500 group-hover:text-white flex items-center justify-center text-2xl transition-all mb-6 shadow-md">
-                        <i class="fa-solid fa-stethoscope"></i>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Article 1 -->
+                <div class="glass-card rounded-3xl overflow-hidden border border-white/5 hover:border-emerald-500/40 transition-all group">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80" alt="Kebersihan Kasur Santri" class="w-full h-full object-cover group-hover:scale-110 transition-all duration-500">
+                        <span class="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-600 text-white shadow">Pencegahan</span>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Pemeriksaan Rutin</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">Pemeriksaan fisik harian, tensi darah, obat gratis, dan perawatan luka ringan bagi santri yang kurang sehat.</p>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors">Cegah Scabies (Gudik) di Asrama Santri</h3>
+                        <p class="text-slate-400 text-sm mb-4">Langkah-langkah menjaga kebersihan kasur, rutin menjemur pakaian, dan tidak saling pinjam pakaian.</p>
+                        <!-- Ganti dengan link tujuan Anda -->
+                        <a href="https://example.com/artikel-scabies" target="_blank" class="text-xs text-emerald-400 font-semibold hover:text-emerald-300 flex items-center gap-1 inline-flex">
+                            BACA SELENGKAPNYA <i class="fa-solid fa-arrow-right text-xs ml-1"></i>
+                        </a>
+                    </div>
                 </div>
 
-                <!-- Service 2 -->
-                <div class="glass-card p-8 rounded-3xl hover:-translate-y-2 transition-all duration-300 border border-white/5 hover:border-emerald-500/50 group cursor-pointer">
-                    <div class="w-14 h-14 rounded-2xl bg-emerald-500/20 text-emerald-400 group-hover:bg-emerald-500 group-hover:text-white flex items-center justify-center text-2xl transition-all mb-6 shadow-md">
-                        <i class="fa-solid fa-bed-pulse"></i>
+                <!-- Article 2 -->
+                <div class="glass-card rounded-3xl overflow-hidden border border-white/5 hover:border-emerald-500/40 transition-all group">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=800&q=80" alt="Pola Istirahat Santri" class="w-full h-full object-cover group-hover:scale-110 transition-all duration-500">
+                        <span class="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-semibold bg-amber-600 text-white shadow">Pola Hidup</span>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Ruang Karantina</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">Fasilitas kamar rawat sementara yang bersih dan terpisah untuk santri yang membutuhkan istirahat total / pemulihan.</p>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors">Menjaga Daya Tahan Tubuh Saat Setoran Hafalan</h3>
+                        <p class="text-slate-400 text-sm mb-4">Tips mengelola waktu tidur, asupan air minum cukup, dan nutrisi agar konsentrasi hafalan tetap optimal.</p>
+                        <!-- Ganti dengan link tujuan Anda -->
+                        <a href="https://example.com/artikel-hafalan" target="_blank" class="text-xs text-emerald-400 font-semibold hover:text-emerald-300 flex items-center gap-1 inline-flex">
+                            BACA SELENGKAPNYA <i class="fa-solid fa-arrow-right text-xs ml-1"></i>
+                        </a>
+                    </div>
                 </div>
 
-                <!-- Service 3 -->
-                <div class="glass-card p-8 rounded-3xl hover:-translate-y-2 transition-all duration-300 border border-white/5 hover:border-emerald-500/50 group cursor-pointer">
-                    <div class="w-14 h-14 rounded-2xl bg-emerald-500/20 text-emerald-400 group-hover:bg-emerald-500 group-hover:text-white flex items-center justify-center text-2xl transition-all mb-6 shadow-md">
-                        <i class="fa-solid fa-soap"></i>
+                <!-- Article 3 -->
+                <div class="glass-card rounded-3xl overflow-hidden border border-white/5 hover:border-emerald-500/40 transition-all group">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=800&q=80" alt="Pertolongan Pertama" class="w-full h-full object-cover group-hover:scale-110 transition-all duration-500">
+                        <span class="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-semibold bg-teal-600 text-white shadow">Pertolongan Pertama</span>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Edukasi PHBS</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">Penyuluhan kebersihan lingkungan asrama, pencegahan penyakit kulit (scabies), dan kebersihan sanitasi pondok.</p>
-                </div>
-
-                <!-- Service 4 -->
-                <div class="glass-card p-8 rounded-3xl hover:-translate-y-2 transition-all duration-300 border border-white/5 hover:border-emerald-500/50 group cursor-pointer">
-                    <div class="w-14 h-14 rounded-2xl bg-emerald-500/20 text-emerald-400 group-hover:bg-emerald-500 group-hover:text-white flex items-center justify-center text-2xl transition-all mb-6 shadow-md">
-                        <i class="fa-solid fa-truck-medical"></i>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors">Penanganan Dini Demam dan Flu pada Santri</h3>
+                        <p class="text-slate-400 text-sm mb-4">Apa yang harus dilakukan teman seasrama saat ada santri yang menggigil atau demam tinggi di malam hari.</p>
+                        <!-- Ganti dengan link tujuan Anda -->
+                        <a href="https://example.com/artikel-demam" target="_blank" class="text-xs text-emerald-400 font-semibold hover:text-emerald-300 flex items-center gap-1 inline-flex">
+                            BACA SELENGKAPNYA <i class="fa-solid fa-arrow-right text-xs ml-1"></i>
+                        </a>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Rujukan & Ambulans</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">Kerjasama resmi dengan Puskesmas dan Rumah Sakit terdekat untuk penanganan darurat santri 24 jam.</p>
                 </div>
             </div>
         </div>
     </section>
+
+               <!-- Article 4 (Rujukan & Ambulans) -->
+<div class="glass-card rounded-3xl overflow-hidden border border-white/5 hover:border-emerald-500/40 transition-all group">
+    <div class="h-48 overflow-hidden relative">
+        <img src="https://images.unsplash.com/photo-1587745416684-47953f16f02f?auto=format&fit=crop&w=800&q=80" alt="Layanan Ambulans dan Rujukan Santri" class="w-full h-full object-cover group-hover:scale-110 transition-all duration-500">
+        <span class="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-semibold bg-red-600 text-white shadow">Darurat</span>
+    </div>
+    <div class="p-6">
+        <h3 class="text-lg font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors">Prosedur Rujukan Medis & Ambulans Santri</h3>
+        <p class="text-slate-400 text-sm mb-4">Panduan alur rujukan gawat darurat santri dari Poskestren menuju Puskesmas atau Rumah Sakit mitra.</p>
+        <!-- Ganti tautan di bawah sesuai dengan link artikel rujukan Anda -->
+        <a href="https://example.com/artikel-rujukan-ambulans" target="_blank" class="text-xs text-emerald-400 font-semibold hover:text-emerald-300 flex items-center gap-1 inline-flex">
+            BACA SELENGKAPNYA <i class="fa-solid fa-arrow-right text-xs ml-1"></i>
+        </a>
+    </div>
+</div>
 
     <!-- Schedule & Duty Section -->
     <section id="schedule" class="py-24 px-6 relative bg-santri-card/30">
