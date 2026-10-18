@@ -123,7 +123,7 @@
         <div id="mobile-menu" class="hidden lg:hidden glass-card border-t border-white/10 px-6 py-6 space-y-4 transition-all">
             <a href="#about" class="block text-slate-300 hover:text-emerald-400 font-medium py-1 mobile-link">Profil</a>
             <a href="#services" class="block text-slate-300 hover:text-emerald-400 font-medium py-1 mobile-link">Layanan Kesehatan</a>
-            <a href="#schedule" class="block text-slate-300 hover:text-emerald-400 font-medium py-1 mobile-link">Jadwal Perawat & Piket</a>
+            <a href="#schedule" class="block text-slate-300 hover:text-emerald-400 font-medium py-1 mobile-link">Jadwal Dokter & Piket</a>
             <a href="#articles" class="block text-slate-300 hover:text-emerald-400 font-medium py-1 mobile-link">Edukasi & PHBS</a>
             <a href="#consultation" class="block w-full text-center px-5 py-3 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-500 text-white font-semibold shadow-lg mobile-link">Daftar Berobat / Konsultasi</a>
         </div>
@@ -177,7 +177,7 @@
                 </div>
             </div>
 
-            <!-- Profile Photo -->
+            <!-- Profile Illustration / Photo -->
             <div class="lg:col-span-5 flex justify-center relative">
                 <div class="relative w-72 h-72 sm:w-96 sm:h-96 animate-float-slow">
                     <div class="absolute inset-0 rounded-3xl bg-gradient-to-tr from-emerald-600 via-teal-500 to-amber-500 blur-2xl opacity-40"></div>
@@ -201,6 +201,54 @@
         </div>
     </section>
 
+    <!-- Services Section -->
+    <section id="services" class="py-24 px-6 relative">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-emerald-400 text-sm font-extrabold uppercase tracking-widest mb-2">Layanan Kami</h2>
+                <p class="text-3xl sm:text-4xl font-bold text-white">Program & Fasilitas Kesehatan</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Service 1 -->
+                <div class="glass-card p-8 rounded-3xl hover:-translate-y-2 transition-all duration-300 border border-white/5 hover:border-emerald-500/50 group cursor-pointer">
+                    <div class="w-14 h-14 rounded-2xl bg-emerald-500/20 text-emerald-400 group-hover:bg-emerald-500 group-hover:text-white flex items-center justify-center text-2xl transition-all mb-6 shadow-md">
+                        <i class="fa-solid fa-stethoscope"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Pemeriksaan Rutin</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Pemeriksaan fisik harian, tensi darah, obat gratis, dan perawatan luka ringan bagi santri yang kurang sehat.</p>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="glass-card p-8 rounded-3xl hover:-translate-y-2 transition-all duration-300 border border-white/5 hover:border-emerald-500/50 group cursor-pointer">
+                    <div class="w-14 h-14 rounded-2xl bg-emerald-500/20 text-emerald-400 group-hover:bg-emerald-500 group-hover:text-white flex items-center justify-center text-2xl transition-all mb-6 shadow-md">
+                        <i class="fa-solid fa-bed-pulse"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Ruang Karantina</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Fasilitas kamar rawat sementara yang bersih dan terpisah untuk santri yang membutuhkan istirahat total / pemulihan.</p>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="glass-card p-8 rounded-3xl hover:-translate-y-2 transition-all duration-300 border border-white/5 hover:border-emerald-500/50 group cursor-pointer">
+                    <div class="w-14 h-14 rounded-2xl bg-emerald-500/20 text-emerald-400 group-hover:bg-emerald-500 group-hover:text-white flex items-center justify-center text-2xl transition-all mb-6 shadow-md">
+                        <i class="fa-solid fa-soap"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Edukasi PHBS</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Penyuluhan kebersihan lingkungan asrama, pencegahan penyakit kulit (scabies), dan kebersihan sanitasi pondok.</p>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="glass-card p-8 rounded-3xl hover:-translate-y-2 transition-all duration-300 border border-white/5 hover:border-emerald-500/50 group cursor-pointer">
+                    <div class="w-14 h-14 rounded-2xl bg-emerald-500/20 text-emerald-400 group-hover:bg-emerald-500 group-hover:text-white flex items-center justify-center text-2xl transition-all mb-6 shadow-md">
+                        <i class="fa-solid fa-truck-medical"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Rujukan & Ambulans</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Kerjasama resmi dengan Puskesmas dan Rumah Sakit terdekat untuk penanganan darurat santri 24 jam.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Schedule & Duty Section -->
     <section id="schedule" class="py-24 px-6 relative bg-santri-card/30">
         <div class="max-w-7xl mx-auto">
@@ -210,12 +258,12 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Perawat 1 -->
+                <!-- Doctor Card 1 -->
                 <div class="glass-card rounded-3xl p-6 border border-emerald-500/20 flex flex-col justify-between hover:border-emerald-400/50 transition-all">
                     <div>
                         <div class="flex items-center gap-4 mb-4">
                             <div class="w-14 h-14 rounded-full bg-emerald-600/30 border border-emerald-400 flex items-center justify-center text-2xl text-emerald-300 shadow-lg">
-                                <i class="fa-solid fa-user-nurse"></i>
+                                <i class="fa-solid fa-user-doctor"></i>
                             </div>
                             <div>
                                 <h3 class="text-lg font-bold text-white">Yeni Vidia Irawati, M.Kes</h3>
@@ -226,11 +274,11 @@
                     </div>
                     <div class="pt-4 border-t border-white/10 flex items-center justify-between text-xs text-slate-300">
                         <span><i class="fa-regular fa-calendar text-emerald-400 mr-1"></i> Selasa & Jumat</span>
-                        <span class="font-bold text-amber-400">16.00 - 18.00 WIB</span>
+                        <span class="font-bold text-amber-400">15.00 - 18.00 WIB</span>
                     </div>
                 </div>
 
-                <!-- Perawat 2 -->
+                <!-- Doctor Card 2 -->
                 <div class="glass-card rounded-3xl p-6 border border-emerald-500/20 flex flex-col justify-between hover:border-emerald-400/50 transition-all">
                     <div>
                         <div class="flex items-center gap-4 mb-4">
@@ -238,7 +286,7 @@
                                 <i class="fa-solid fa-user-nurse"></i>
                             </div>
                             <div>
-                                <h3 class="text-lg font-bold text-white">Jeni Jovita Ramadhani</h3>
+                                <h3 class="text-lg font-bold text-white">Jennei Jovita Ramadhani</h3>
                                 <p class="text-xs text-emerald-400">Perawat Mitra Poskestren</p>
                             </div>
                         </div>
@@ -246,7 +294,7 @@
                     </div>
                     <div class="pt-4 border-t border-white/10 flex items-center justify-between text-xs text-slate-300">
                         <span><i class="fa-regular fa-calendar text-emerald-400 mr-1"></i> Senin & Kamis</span>
-                        <span class="font-bold text-amber-400">14.00 - 17.00 WIB</span>
+                        <span class="font-bold text-amber-400">17.00 - 20.00 WIB</span>
                     </div>
                 </div>
 
@@ -285,6 +333,250 @@
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Article 1 -->
+                <div class="glass-card rounded-3xl overflow-hidden border border-white/5 hover:border-emerald-500/40 transition-all group">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80" alt="Kebersihan Kasur Santri" class="w-full h-full object-cover group-hover:scale-110 transition-all duration-500">
+                        <span class="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-600 text-white shadow">Pencegahan</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors">Cegah Scabies (Gudik) di Asrama Santri</h3>
+                        <p class="text-slate-400 text-sm mb-4">Langkah-langkah menjaga kebersihan kasur, rutin menjemur pakaian, dan tidak saling pinjam pakaian.</p>
+                        <button onclick="showToast('Fitur Artikel', 'Artikel lengkap sedang dimuat ke aplikasi santri.')" class="text-xs text-emerald-400 font-semibold hover:text-emerald-300 flex items-center gap-1">BACA SELENGKAPNYA <i class="fa-solid fa-arrow-right text-xs ml-1"></i></button>
+                    </div>
+                </div>
+
+                <!-- Article 2 -->
+                <div class="glass-card rounded-3xl overflow-hidden border border-white/5 hover:border-emerald-500/40 transition-all group">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=800&q=80" alt="Pola Istirahat Santri" class="w-full h-full object-cover group-hover:scale-110 transition-all duration-500">
+                        <span class="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-semibold bg-amber-600 text-white shadow">Pola Hidup</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors">Menjaga Daya Tahan Tubuh Saat Setoran Hafalan</h3>
+                        <p class="text-slate-400 text-sm mb-4">Tips mengelola waktu tidur, asupan air minum cukup, dan nutrisi agar konsentrasi hafalan tetap optimal.</p>
+                        <button onclick="showToast('Fitur Artikel', 'Artikel lengkap sedang dimuat ke aplikasi santri.')" class="text-xs text-emerald-400 font-semibold hover:text-emerald-300 flex items-center gap-1">BACA SELENGKAPNYA <i class="fa-solid fa-arrow-right text-xs ml-1"></i></button>
+                    </div>
+                </div>
+
+                <!-- Article 3 -->
+                <div class="glass-card rounded-3xl overflow-hidden border border-white/5 hover:border-emerald-500/40 transition-all group">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=800&q=80" alt="Pertolongan Pertama" class="w-full h-full object-cover group-hover:scale-110 transition-all duration-500">
+                        <span class="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-semibold bg-teal-600 text-white shadow">Pertolongan Pertama</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors">Penanganan Dini Demam dan Flu pada Santri</h3>
+                        <p class="text-slate-400 text-sm mb-4">Apa yang harus dilakukan teman seasrama saat ada santri yang menggigil atau demam tinggi di malam hari.</p>
+                        <button onclick="showToast('Fitur Artikel', 'Artikel lengkap sedang dimuat ke aplikasi santri.')" class="text-xs text-emerald-400 font-semibold hover:text-emerald-300 flex items-center gap-1">BACA SELENGKAPNYA <i class="fa-solid fa-arrow-right text-xs ml-1"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration / Consultation Form Section -->
+    <section id="consultation" class="py-24 px-6 relative">
+        <div class="max-w-4xl mx-auto glass-card rounded-3xl p-8 sm:p-12 border border-emerald-500/30 relative overflow-hidden shadow-2xl">
+            <div class="text-center mb-10">
+                <h2 class="text-emerald-400 text-sm font-extrabold uppercase tracking-widest mb-2">Formulir Pendaftaran</h2>
+                <p class="text-3xl font-bold text-white">Daftar Berobat / Konsultasi Santri</p>
+                <p class="text-slate-400 text-sm mt-2">Silakan isi data keluhan di bawah ini untuk mempercepat pelayanan di Poskestren.</p>
+            </div>
+
+            <form id="health-form" class="space-y-6">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-slate-300 text-sm font-medium mb-2">Nama Lengkap Santri</label>
+                        <input type="text" id="santri-name" required class="w-full bg-santri-dark/80 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500 transition-colors" placeholder="Masukkan nama santri">
+                    </div>
+                    <div>
+                        <label class="block text-slate-300 text-sm font-medium mb-2">Komplek / Asrama</label>
+                        <input type="text" id="santri-room" required class="w-full bg-santri-dark/80 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500 transition-colors" placeholder="Contoh: Komplek A / Asrama 04">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-slate-300 text-sm font-medium mb-2">Kategori Santri</label>
+                        <select class="w-full bg-santri-dark/80 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-emerald-500 transition-colors">
+                            <option value="putra">Santri Putra</option>
+                            <option value="putri">Santri Putri</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-slate-300 text-sm font-medium mb-2">Layanan yang Dibutuhkan</label>
+                        <select class="w-full bg-santri-dark/80 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-emerald-500 transition-colors">
+                            <option value="pemeriksaan">Pemeriksaan Umum / Berobat</option>
+                            <option value="obat">Minta Obat / P3K</option>
+                            <option value="karantina">Izin Karantina / Istirahat</option>
+                            <option value="konsultasi">Konsultasi Kesehatan</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-slate-300 text-sm font-medium mb-2">Keluhan Kesehatan / Gejala</label>
+                    <textarea rows="4" id="santri-complaint" required class="w-full bg-santri-dark/80 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500 transition-colors" placeholder="Jelaskan gejalanya (misal: pusing, demam sejak semalam, batuk, dll)..."></textarea>
+                </div>
+
+                <button type="submit" id="submit-btn" class="w-full py-4 rounded-xl bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-500 text-white font-bold shadow-xl hover:opacity-90 transition-all flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-paper-plane"></i> Kirim Pendaftaran Berobat
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-6 left-6 z-40 w-12 h-12 rounded-full bg-emerald-600 text-white shadow-xl flex items-center justify-center opacity-0 pointer-events-none transition-all hover:bg-emerald-500 hover:scale-110">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- Footer -->
+    <footer class="py-10 border-t border-white/10 text-slate-400 text-sm bg-santri-dark">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+            <div>
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-8 h-8 rounded-lg bg-emerald-600 flex items-center justify-center text-white font-bold shadow">
+                        <i class="fa-solid fa-heart-pulse text-sm"></i>
+                    </div>
+                    <span class="text-lg font-bold text-white">Poskestren Raudlatul Musthofa</span>
+                </div>
+                <p class="text-xs text-slate-400 leading-relaxed">Divisi Kesehatan Pondok Pesantren Raudlatul Musthofa. Mengabdi untuk kesehatan dan kesejahteraan para penuntut ilmu syar'i.</p>
+            </div>
+
+            <div>
+                <h4 class="text-white font-bold mb-3">Kontak Darurat & Lokasi</h4>
+                <p class="text-xs text-slate-400 mb-2"><i class="fa-solid fa-location-dot text-emerald-400 mr-2"></i> Gedung Poskestren Lantai 1, Area Samping Masjid Utama</p>
+                <p class="text-xs text-slate-400 mb-2"><i class="fa-solid fa-phone text-emerald-400 mr-2"></i> Hotline: +62 812-3456-7890</p>
+                <p class="text-xs text-slate-400"><i class="fa-solid fa-envelope text-emerald-400 mr-2"></i> poskestren@raudlatulmusthofa.ac.id</p>
+            </div>
+
+            <div>
+                <h4 class="text-white font-bold mb-3">Jam Operasional Layanan</h4>
+                <p class="text-xs text-slate-400 mb-1"><b>Pemeriksaan Rutin:</b> 08.00 - 11.00 & 16.00 - 20.00 WIB</p>
+                <p class="text-xs text-slate-400 mb-1"><b>Layanan Darurat (UGD):</b> 24 Jam Nonstop</p>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 pt-6 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500">
+            <p>&copy; 2026 Poskestren PP. Raudlatul Musthofa. Khidmah Untuk Santri.</p>
+            <div class="flex space-x-4 mt-4 sm:mt-0">
+                <a href="https://wa.me/6281234567890" target="_blank" class="hover:text-emerald-400 transition-colors"><i class="fa-brands fa-whatsapp text-base"></i></a>
+                <a href="#" class="hover:text-emerald-400 transition-colors"><i class="fa-brands fa-instagram text-base"></i></a>
+                <a href="#" class="hover:text-emerald-400 transition-colors"><i class="fa-brands fa-youtube text-base"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Interactivity -->
+    <script>
+        // Toggle Mobile Menu
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            if (mobileMenu.classList.contains('hidden')) {
+                menuIcon.classList.remove('fa-xmark');
+                menuIcon.classList.add('fa-bars');
+            } else {
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-xmark');
+            }
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.classList.remove('fa-xmark');
+                menuIcon.classList.add('fa-bars');
+            });
+        });
+
+        // Toast Notification System
+        function showToast(title, message) {
+            const container = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+            toast.className = 'glass-card px-5 py-4 rounded-2xl border border-emerald-500/40 shadow-2xl text-white text-sm flex items-center gap-3 transform translate-y-5 opacity-0 transition-all duration-300 pointer-events-auto';
+            toast.innerHTML = `
+                <div class="w-8 h-8 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0">
+                    <i class="fa-solid fa-circle-info"></i>
+                </div>
+                <div>
+                    <p class="font-bold text-emerald-400">${title}</p>
+                    <p class="text-xs text-slate-300">${message}</p>
+                </div>
+            `;
+            container.appendChild(toast);
+            
+            setTimeout(() => {
+                toast.classList.remove('translate-y-5', 'opacity-0');
+            }, 50);
+
+            setTimeout(() => {
+                toast.classList.add('translate-y-5', 'opacity-0');
+                setTimeout(() => toast.remove(), 300);
+            }, 4000);
+        }
+
+        // Handle Health Form Submission
+        const healthForm = document.getElementById('health-form');
+        healthForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('santri-name').value;
+            showToast('Pendaftaran Berhasil!', `Data pemeriksaan untuk ${name} telah dikirim ke petugas piket.`);
+            healthForm.reset();
+        });
+
+        // Back to Top Button & Scroll Effect
+        const backToTopBtn = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 400) {
+                backToTopBtn.classList.remove('opacity-0', 'pointer-events-none');
+            } else {
+                backToTopBtn.classList.add('opacity-0', 'pointer-events-none');
+            }
+        });
+
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Animated Statistics Counter
+        const counters = document.querySelectorAll('.counter');
+        let animated = false;
+
+        function runCounters() {
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-target');
+                let count = 0;
+                const speed = target / 50;
+                const updateCount = () => {
+                    count += speed;
+                    if (count < target) {
+                        counter.innerText = Math.ceil(count);
+                        setTimeout(updateCount, 30);
+                    } else {
+                        counter.innerText = target;
+                    }
+                };
+                updateCount();
+            });
+        }
+
+        window.addEventListener('scroll', () => {
+            const scrollPos = window.scrollY + window.innerHeight;
+            const aboutSection = document.getElementById('about');
+            if (aboutSection && scrollPos >= aboutSection.offsetTop + 200 && !animated) {
+                runCounters();
+                animated = true;
+            }
+        });
+    </script>
+</body>
+</html>
    
  
   
