@@ -1,209 +1,346 @@
 <!DOCTYPE html>
-<html lang="id" class="scroll-smooth">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jadwal & Target Harian Santri</title>
+    <title>Biodata Galaksi Saya</title>
+    <!-- Google Fonts Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
-    
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Plus Jakarta Sans', 'sans-serif'],
-                        arabic: ['Amiri', 'serif'],
-                    },
-                    colors: {
-                        santri: {
-                            dark: '#04150E',
-                            card: '#082218',
-                            emerald: '#059669',
-                            gold: '#D97706',
-                        }
-                    }
-                }
-            }
-        }
-    </script>
     <style>
-        .glass-card {
-            background: rgba(8, 34, 24, 0.75);
-            backdrop-filter: blur(14px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+        /* Reset CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Latar Belakang Animated Galaxy Gradient */
+        body {
+            background: linear-gradient(135deg, #0b001a, #1a0033, #2b004f, #4a0072, #0d001a);
+            background-size: 400% 400%;
+            animation: galaxyShift 15s ease infinite;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            overflow-x: hidden;
+            position: relative;
+            perspective: 1000px;
+        }
+
+        /* Animasi pergerakan gradasi galaksi */
+        @keyframes galaxyShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Efek Bintang Latar Belakang */
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(2px 2px at 20px 30px, #ffffff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 40px 70px, #e0aaff, rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 90px 40px, #ffffff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 160px 120px, #ff99dd, rgba(0,0,0,0)),
+                radial-gradient(1.5px 1.5px at 230px 190px, #00dfd8, rgba(0,0,0,0));
+            background-repeat: repeat;
+            background-size: 250px 250px;
+            opacity: 0.6;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        /* Kartu Utama dengan Glassmorphism & 3D Transform */
+        .card-container {
+            position: relative;
+            z-index: 2;
+            background: rgba(255, 255, 255, 0.07);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            width: 100%;
+            max-width: 600px;
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 
+                        0 0 30px rgba(186, 85, 211, 0.3);
+            overflow: hidden;
+            transform-style: preserve-3d;
+            transition: transform 0.1s ease-out;
+        }
+
+        /* Header Profil */
+        .profile-header {
+            text-align: center;
+            padding: 40px 20px 20px;
+            background: radial-gradient(circle at top, rgba(147, 51, 234, 0.4), transparent);
+        }
+
+        /* Bingkai Avatar Cahaya Neon */
+        .avatar-wrapper {
+            display: inline-block;
+            position: relative;
+            border-radius: 50%;
+            padding: 5px;
+            background: linear-gradient(45deg, #ff007f, #7928ca, #00dfd8);
+            box-shadow: 0 0 20px rgba(255, 0, 127, 0.6);
+            animation: glowPulse 3s infinite alternate;
+        }
+
+        @keyframes glowPulse {
+            0% { box-shadow: 0 0 15px rgba(255, 0, 127, 0.5); }
+            100% { box-shadow: 0 0 30px rgba(0, 223, 216, 0.8); }
+        }
+
+        .profile-img {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .profile-header h1 {
+            font-size: 26px;
+            margin-top: 15px;
+            font-weight: 700;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+
+        .profesi {
+            font-size: 14px;
+            color: #e0aaff;
+            margin-top: 5px;
+            margin-bottom: 20px;
+        }
+
+        /* Tombol Sapa Galaksi Interaktif */
+        #btn-sapa {
+            background: linear-gradient(90deg, #ff007f, #7928ca);
+            color: #ffffff;
+            border: none;
+            padding: 12px 28px;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 0 15px rgba(255, 0, 127, 0.4);
+            transition: transform 0.2s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #btn-sapa:hover {
+            box-shadow: 0 0 25px rgba(255, 0, 127, 0.8);
+            transform: scale(1.05);
+        }
+
+        /* Konten Biodata */
+        .biodata-content {
+            padding: 30px;
+        }
+
+        .biodata-content h2 {
+            font-size: 18px;
+            color: #ff99dd;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 8px;
+        }
+
+        .info-list {
+            list-style: none;
+        }
+
+        .info-list li {
+            padding: 12px 0;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+        }
+
+        .info-list li span {
+            color: #c8b6ff;
+        }
+
+        .info-list li strong {
+            color: #ffffff;
+            text-align: right;
+        }
+
+        /* Badges Keahlian */
+        .skills-container {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+
+        .skill-badge {
+            background: rgba(121, 40, 202, 0.3);
+            border: 1px solid rgba(255, 0, 127, 0.4);
+            color: #ffffff;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            box-shadow: 0 0 10px rgba(121, 40, 202, 0.3);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .skill-badge:hover {
+            background: rgba(255, 0, 127, 0.5);
+            box-shadow: 0 0 15px rgba(255, 0, 127, 0.7);
+            transform: translateY(-2px);
+        }
+
+        /* Partikel Bintang Meledak dari Klik */
+        .star-particle {
+            position: fixed;
+            width: 8px;
+            height: 8px;
+            background: #ff007f;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #ff007f, 0 0 20px #00dfd8;
+            pointer-events: none;
+            z-index: 9999;
         }
     </style>
 </head>
-<body class="bg-santri-dark text-slate-200 font-sans min-h-screen relative overflow-x-hidden p-4 sm:p-8">
+<body>
 
-    <!-- Glowing Ambient Background -->
-    <div class="fixed top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-emerald-600/10 rounded-full blur-[140px] pointer-events-none -z-10"></div>
+    <!-- Latar Belakang Efek Bintang -->
+    <div class="stars"></div>
 
-    <div class="max-w-4xl mx-auto space-y-8">
-
-        <!-- Navigasi Kembali ke Poskestren -->
-        <div class="flex items-center justify-between">
-            <a href="index.html" class="inline-flex items-center gap-2 text-xs font-bold text-emerald-400 hover:text-emerald-300 transition-colors bg-emerald-950/50 px-4 py-2 rounded-xl border border-emerald-800/40">
-                <i class="fa-solid fa-arrow-left"></i> Kembali ke Poskestren
-            </a>
-            <span class="text-xs text-slate-400" id="current-date">--:--:--</span>
+    <!-- Kartu Utama Biodata -->
+    <div class="card-container">
+        <!-- Header Profil -->
+        <div class="profile-header">
+            <div class="avatar-wrapper">
+                <img src="https://via.placeholder.com/150/1a0033/ffffff?text=Profil" alt="Foto Profil" class="profile-img" id="avatar">
+            </div>
+            <h1 id="nama-lengkap">Nama Lengkap Anda</h1>
+            <p class="profesi" id="profesi">✨ Penjelajah Kode & Desainer Grafis ✨</p>
+            <button id="btn-sapa">Sapa Dari Galaksi 🚀</button>
         </div>
 
-        <!-- Header Hero -->
-        <div class="glass-card p-6 sm:p-8 rounded-3xl border border-emerald-500/20 text-center relative overflow-hidden">
-            <div class="inline-block px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-semibold mb-3">
-                <i class="fa-solid fa-sparkles mr-1"></i> Santri Productivity Kit
-            </div>
-            <h1 class="text-3xl sm:text-4xl font-extrabold text-white mb-2">Jadwal & Target Harian Santri</h1>
-            <p class="text-slate-400 text-sm max-w-xl mx-auto">Istiqomah adalah kunci. Pantau rutinitas ibadah, hafalan, dan kegiatan harianmu di sini.</p>
-            
-            <!-- Ayat / Motivasi -->
-            <div class="mt-6 p-4 rounded-2xl bg-santri-card border border-emerald-500/20">
-                <p class="font-arabic text-xl text-amber-400 mb-1">إِنَّ الَّذِينَ قَالُوا رَبُّنَا اللَّهُ ثُمَّ اسْتَقَامُوا</p>
-                <p class="text-xs text-slate-400 italic">"Sesungguhnya orang-orang yang berkata 'Tuhan kami adalah Allah' kemudian mereka meneguhkan pendirian mereka (istiqomah)..."</p>
-            </div>
-        </div>
+        <!-- Section Informasi Biodata -->
+        <div class="biodata-content">
+            <h2><span class="icon">🌌</span> Informasi Pribadi</h2>
+            <ul class="info-list">
+                <li><span>Tempat, Tgl Lahir</span> <strong>Jakarta, 01 Januari 2000</strong></li>
+                <li><span>Jenis Kelamin</span> <strong>Laki-Laki / Perempuan</strong></li>
+                <li><span>Alamat</span> <strong>Bumi, Sektor Galaksi Bima Sakti</strong></li>
+                <li><span>Email</span> <strong>emailanda@example.com</strong></li>
+                <li><span>Telepon</span> <strong>+62 812-3456-7890</strong></li>
+            </ul>
 
-        <!-- Progress Tracker Bar -->
-        <div class="glass-card p-6 rounded-3xl border border-emerald-500/20 space-y-3">
-            <div class="flex justify-between items-center text-sm">
-                <span class="font-bold text-white"><i class="fa-solid fa-chart-line text-emerald-400 mr-2"></i> Progress Hari Ini</span>
-                <span class="font-bold text-emerald-400" id="progress-percent">0%</span>
-            </div>
-            <div class="w-full bg-slate-800 h-3 rounded-full overflow-hidden p-0.5 border border-white/5">
-                <div id="progress-bar" class="bg-gradient-to-r from-emerald-500 to-teal-400 h-full rounded-full transition-all duration-500 w-0"></div>
+            <h2><span class="icon">🚀</span> Keahlian Utama</h2>
+            <div class="skills-container">
+                <span class="skill-badge">HTML5</span>
+                <span class="skill-badge">CSS3 / Neon Styling</span>
+                <span class="skill-badge">JavaScript ES6</span>
+                <span class="skill-badge">UI/UX Design</span>
             </div>
         </div>
-
-        <!-- Target / Habit Checklist -->
-        <div class="space-y-4">
-            <h2 class="text-xl font-bold text-white flex items-center gap-2">
-                <i class="fa-solid fa-list-check text-amber-400"></i> Checklist Target Kegiatan
-            </h2>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4" id="habit-list">
-                <!-- Item Habit 1 -->
-                <label class="glass-card p-4 rounded-2xl flex items-center justify-between cursor-pointer hover:border-emerald-500/40 transition-all group">
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-lg">
-                            <i class="fa-solid fa-moon"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-white text-sm group-hover:text-emerald-300 transition-colors">Tahajud & Subuh</h4>
-                            <p class="text-xs text-slate-400">Jam 03.30 - 04.30 WIB</p>
-                        </div>
-                    </div>
-                    <input type="checkbox" onchange="updateProgress()" class="habit-checkbox w-5 h-5 accent-emerald-500 rounded cursor-pointer">
-                </label>
-
-                <!-- Item Habit 2 -->
-                <label class="glass-card p-4 rounded-2xl flex items-center justify-between cursor-pointer hover:border-emerald-500/40 transition-all group">
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center text-lg">
-                            <i class="fa-solid fa-book-quran"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-white text-sm group-hover:text-emerald-300 transition-colors">Setoran Hafalan</h4>
-                            <p class="text-xs text-slate-400">Setelah Ba'da Subuh</p>
-                        </div>
-                    </div>
-                    <input type="checkbox" onchange="updateProgress()" class="habit-checkbox w-5 h-5 accent-emerald-500 rounded cursor-pointer">
-                </label>
-
-                <!-- Item Habit 3 -->
-                <label class="glass-card p-4 rounded-2xl flex items-center justify-between cursor-pointer hover:border-emerald-500/40 transition-all group">
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-xl bg-teal-500/20 text-teal-400 flex items-center justify-center text-lg">
-                            <i class="fa-solid fa-broom"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-white text-sm group-hover:text-emerald-300 transition-colors">Ro'an / Piket Kobong</h4>
-                            <p class="text-xs text-slate-400">Jam 06.30 WIB</p>
-                        </div>
-                    </div>
-                    <input type="checkbox" onchange="updateProgress()" class="habit-checkbox w-5 h-5 accent-emerald-500 rounded cursor-pointer">
-                </label>
-
-                <!-- Item Habit 4 -->
-                <label class="glass-card p-4 rounded-2xl flex items-center justify-between cursor-pointer hover:border-emerald-500/40 transition-all group">
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-xl bg-blue-500/20 text-blue-400 flex items-center justify-center text-lg">
-                            <i class="fa-solid fa-graduation-cap"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-white text-sm group-hover:text-emerald-300 transition-colors">Sekolah / Madrasah</h4>
-                            <p class="text-xs text-slate-400">Jam 07.30 - 12.00 WIB</p>
-                        </div>
-                    </div>
-                    <input type="checkbox" onchange="updateProgress()" class="habit-checkbox w-5 h-5 accent-emerald-500 rounded cursor-pointer">
-                </label>
-
-                <!-- Item Habit 5 -->
-                <label class="glass-card p-4 rounded-2xl flex items-center justify-between cursor-pointer hover:border-emerald-500/40 transition-all group">
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-xl bg-purple-500/20 text-purple-400 flex items-center justify-center text-lg">
-                            <i class="fa-solid fa-book-open"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-white text-sm group-hover:text-emerald-300 transition-colors">Pengajian Kitab Kuning</h4>
-                            <p class="text-xs text-slate-400">Ba'da Ashar & Maghrib</p>
-                        </div>
-                    </div>
-                    <input type="checkbox" onchange="updateProgress()" class="habit-checkbox w-5 h-5 accent-emerald-500 rounded cursor-pointer">
-                </label>
-
-                <!-- Item Habit 6 -->
-                <label class="glass-card p-4 rounded-2xl flex items-center justify-between cursor-pointer hover:border-emerald-500/40 transition-all group">
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-xl bg-rose-500/20 text-rose-400 flex items-center justify-center text-lg">
-                            <i class="fa-solid fa-bed"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-white text-sm group-hover:text-emerald-300 transition-colors">Muthala'ah & Istirahat</h4>
-                            <p class="text-xs text-slate-400">Jam 22.00 WIB</p>
-                        </div>
-                    </div>
-                    <input type="checkbox" onchange="updateProgress()" class="habit-checkbox w-5 h-5 accent-emerald-500 rounded cursor-pointer">
-                </label>
-            </div>
-        </div>
-
-        <!-- Footer -->
-        <div class="text-center text-xs text-slate-500 pt-6 border-t border-white/10">
-            <p>&copy; 2026 Santri Productivity - Khidmah Untuk Pondok Pesantren.</p>
-        </div>
-
     </div>
 
-    <!-- Script Logika Interactive -->
+    <!-- JavaScript Logika & Interativitas -->
     <script>
-        // Tanggal otomatis
-        const dateElem = document.getElementById('current-date');
-        const now = new Date();
-        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-        dateElem.innerText = now.toLocaleDateString('id-ID', options);
+        document.addEventListener('DOMContentLoaded', () => {
+            const btnSapa = document.getElementById('btn-sapa');
+            const nama = document.getElementById('nama-lengkap').innerText;
+            const card = document.querySelector('.card-container');
 
-        // Update Progress Bar saat checkbox dicentang
-        function updateProgress() {
-            const checkboxes = document.querySelectorAll('.habit-checkbox');
-            const total = checkboxes.length;
-            let checkedCount = 0;
-
-            checkboxes.forEach(cb => {
-                if(cb.checked) checkedCount++;
+            // 1. Efek Kartu 3D Bergerak Mengikuti Pergerakan Mouse (3D Tilt)
+            document.addEventListener('mousemove', (e) => {
+                const xAxis = (window.innerWidth / 2 - e.clientX) / 25;
+                const yAxis = (window.innerHeight / 2 - e.clientY) / 25;
+                
+                card.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
             });
 
-            const percent = Math.round((checkedCount / total) * 100);
-            
-            document.getElementById('progress-percent').innerText = percent + '%';
-            document.getElementById('progress-bar').style.width = percent + '%';
-        }
+            // Mengembalikan posisi kartu saat kursor meninggalkan jendela
+            document.addEventListener('mouseleave', () => {
+                card.style.transform = `rotateY(0deg) rotateX(0deg)`;
+                card.style.transition = 'transform 0.5s ease';
+            });
+
+            document.addEventListener('mouseenter', () => {
+                card.style.transition = 'none';
+            });
+
+            // 2. Event Tombol Sapa: Animasi Membal & Partikel Bintang
+            btnSapa.addEventListener('click', (e) => {
+                // Efek animasi tombol membal
+                btnSapa.style.transform = 'scale(0.85)';
+                setTimeout(() => {
+                    btnSapa.style.transform = 'scale(1)';
+                }, 150);
+
+                // Buat ledakan partikel bintang dari koordinat klik tombol
+                for (let i = 0; i < 20; i++) {
+                    createShootingStar(e.clientX, e.clientY);
+                }
+
+                // Tampilkan pesan dengan jeda agar efek berjalan dulu
+                setTimeout(() => {
+                    alert(`✨ Halo dari Stasion Galaksi! Terima kasih telah berkunjung ke profil ${nama}. Semoga harimu dipenuhi keajaiban kosmik! 🚀🌌`);
+                }, 300);
+            });
+
+            // 3. Fungsi Membuat Partikel Bintang Bergerak
+            function createShootingStar(x, y) {
+                const star = document.createElement('div');
+                star.classList.add('star-particle');
+                document.body.appendChild(star);
+
+                star.style.left = `${x}px`;
+                star.style.top = `${y}px`;
+
+                // Variasi warna partikel acak bertema kosmik
+                const colors = ['#ff007f', '#7928ca', '#00dfd8', '#ffffff', '#ff99dd'];
+                const randomColor = colors[Math.floor(Math.random() * colors.length)];
+                star.style.background = randomColor;
+                star.style.boxShadow = `0 0 10px ${randomColor}, 0 0 20px ${randomColor}`;
+
+                // Arah ledakan partikel acak
+                const destinationX = (Math.random() - 0.5) * 350;
+                const destinationY = (Math.random() - 0.5) * 350;
+
+                // Jalankan animasi gerak
+                const animation = star.animate([
+                    {
+                        transform: 'translate(0, 0) scale(1)',
+                        opacity: 1
+                    },
+                    {
+                        transform: `translate(${destinationX}px, ${destinationY}px) scale(0)`,
+                        opacity: 0
+                    }
+                ], {
+                    duration: 800 + Math.random() * 400,
+                    easing: 'cubic-bezier(0, .9, .57, 1)'
+                });
+
+                // Hapus elemen setelah animasi selesai
+                animation.onfinish = () => {
+                    star.remove();
+                };
+            }
+        });
     </script>
 </body>
 </html>
